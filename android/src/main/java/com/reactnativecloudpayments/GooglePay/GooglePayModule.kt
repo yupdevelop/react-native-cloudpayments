@@ -61,8 +61,8 @@ class GooglePayModule(reactContext: ReactApplicationContext): ReactContextBaseJa
     countryCode = initialData.getString("countryCode") as String;
     currencyCode = initialData.getString("currencyCode") as String;
 
-    val activity = currentActivity as Activity;
-    paymentsClient = googlePayRequest.createPaymentsClient(activity, environmentRunning);
+    // val activity = currentActivity as Activity;
+    // paymentsClient = googlePayRequest.createPaymentsClient(activity, environmentRunning);
 
     reactApplicationContext.addActivityEventListener(this)
   }
@@ -76,8 +76,9 @@ class GooglePayModule(reactContext: ReactApplicationContext): ReactContextBaseJa
   fun canMakePayments(promise: Promise) {
     val isReadyToPayJson = googlePayRequest.isReadyToPayRequest() ?: return
     val request = IsReadyToPayRequest.fromJson(isReadyToPayJson.toString());
-    val task = paymentsClient.isReadyToPay(request)
+    // val task = paymentsClient.isReadyToPay(request)
 
+    /*
     task.addOnCompleteListener { completedTask ->
       try {
         if(completedTask.getResult(ApiException::class.java)) {
@@ -90,6 +91,7 @@ class GooglePayModule(reactContext: ReactApplicationContext): ReactContextBaseJa
         promise.resolve(false);
       }
     }
+    */
   }
 
   @ReactMethod
@@ -97,6 +99,6 @@ class GooglePayModule(reactContext: ReactApplicationContext): ReactContextBaseJa
     val paymentDataRequest: String = googlePayRequest.getPaymentDataRequest().toString()
     val request = PaymentDataRequest.fromJson(paymentDataRequest) // конвертация из json в класс дата
 
-    AutoResolveHelper.resolveTask(paymentsClient.loadPaymentData(request), currentActivity!!, REQUEST_CODE_PAYMENT)
+    // AutoResolveHelper.resolveTask(paymentsClient.loadPaymentData(request), currentActivity!!, REQUEST_CODE_PAYMENT)
   }
 }

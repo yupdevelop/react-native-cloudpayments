@@ -59,7 +59,6 @@ class CloudPaymentsApi(reactContext: ReactApplicationContext): ReactContextBaseJ
     val body = PaymentRequestBody(
       amount = paymentData.amount,
       currency = paymentData.currency,
-      ipAddress = paymentData.ipAddress,
       name = paymentData.cardholderName,
       cryptogram = cardCryptogramPacket,
       jsonData = paymentData.jsonData,
@@ -86,7 +85,6 @@ class CloudPaymentsApi(reactContext: ReactApplicationContext): ReactContextBaseJ
     val body = PaymentRequestBody(
       amount = paymentData.amount,
       currency = paymentData.currency,
-      ipAddress = paymentData.ipAddress,
       name = paymentData.cardholderName,
       cryptogram = cardCryptogramPacket,
       jsonData = paymentData.jsonData,

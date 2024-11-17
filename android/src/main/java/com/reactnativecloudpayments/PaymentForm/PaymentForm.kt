@@ -102,9 +102,6 @@ class PaymentForm(reactContext: ReactApplicationContext): ReactContextBaseJavaMo
       paymentData = paymentData,
       scanner = CardIOScanner(),
       useDualMessagePayment = initialConfigurationParsed.useDualMessagePayment,
-      disableGPay = initialConfigurationParsed.disableGPay,
-      disableYandexPay = initialConfigurationParsed.disableYandexPay,
-      yandexPayMerchantID = this.paymentData.yandexPayMerchantID
     )
 
     val appCompatActivity = currentActivity as AppCompatActivity;

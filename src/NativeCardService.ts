@@ -10,7 +10,8 @@ export interface Spec extends TurboModule {
     cardDate: string,
     cardCVC: string,
     publicId: string,
-    publicKey: string
+    publicKey: string,
+    keyVersion: number
   ) => Promise<string>;
   cardCryptogramForCVV: (cvv: string) => Promise<string>;
   isValidExpDateFull: (expDate: string) => Promise<boolean>;

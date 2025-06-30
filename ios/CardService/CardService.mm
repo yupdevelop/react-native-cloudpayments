@@ -31,6 +31,7 @@ RCT_EXPORT_MODULE()
   cardCVC: (NSString *)cardCVC
   publicId: (NSString *)publicId
   publicKey: (NSString *)publicKey
+  keyVersion: (double)keyVersion
   resolve:(RCTPromiseResolveBlock)resolve
   reject:(RCTPromiseRejectBlock)reject{
   [[CardServiceSwift shared]
@@ -39,6 +40,7 @@ RCT_EXPORT_MODULE()
    cardCVC: cardCVC
    publicId: publicId
    publicKey: publicKey
+   keyVersion: keyVersion
    resolve: resolve
    reject: reject
   ];

@@ -34,7 +34,9 @@ class CardService(reactContext: ReactApplicationContext): NativeCardServiceSpec(
     cardCVC: String,
     publicId: String,
     publicKey: String,
-    promise: Promise?) {
+    keyVersion: Double,
+    promise: Promise?
+  ) {
     val cardCryptogram = Card.createCardCryptogram(cardNumber, cardDate, cardCVC, publicId, publicKey)
 
     if (cardCryptogram != null) {

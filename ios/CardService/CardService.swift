@@ -37,12 +37,11 @@ public class CardServiceSwift: NSObject {
     cardCVC: String,
     publicId: String,
     publicKey: String,
+    keyVersion: Int,
     resolve: RCTPromiseResolveBlock?,
     reject: RCTPromiseRejectBlock?
   ) {
-    let publicKeyToInt = Int(publicKey) ?? 0
-    
-    let cardCryptogramPacket = Card.makeCardCryptogramPacket(cardNumber: cardNumber, expDate: cardDate, cvv: cardCVC, merchantPublicID: publicId, publicKey: publicKey, keyVersion: publicKeyToInt)
+    let cardCryptogramPacket = Card.makeCardCryptogramPacket(cardNumber: cardNumber, expDate: cardDate, cvv: cardCVC, merchantPublicID: publicId, publicKey: publicKey, keyVersion: keyVersion)
     
     if (cardCryptogramPacket != nil) {
       resolve?(cardCryptogramPacket)

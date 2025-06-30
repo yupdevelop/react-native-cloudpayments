@@ -122,6 +122,7 @@ const cryptogramPacket = await CardService.createCardCryptogram(
   cardCVC,
   publicId,
   publicKey
+  keyVersion
 );
 ```
 

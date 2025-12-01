@@ -153,6 +153,7 @@ class PaymentForm(reactContext: ReactApplicationContext): NativePaymentFormSpec(
       payer = payer,
       receipt = receipt,
       recurrent = recurrent,
+      jsonData = "{}",
     )
   }
 
